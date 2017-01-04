@@ -1,0 +1,14 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.add-article-button {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}

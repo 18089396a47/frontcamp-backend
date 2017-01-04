@@ -1,0 +1,27 @@
+extends layout
+title= admin
+
+block content
+    if type == "add"
+        h1= "Add your article"
+        form(action="/articles/add" method="post" enctype="multipart/form-data")
+            h3= "Title:"
+            input(type="text" name="title")
+            h3= "Content:"
+            textarea(rows="8" cols="80" name="content")
+            h3= "Author:"
+            input(type="text" name="author")
+            h3= "Image:"
+            input(type="file" name="image")
+            input(class="add-article-button" type="submit" value="Add")
+    else
+        h1= "Edit your article"
+        form(action=("/articles/edit/" + article.id) method="post" enctype="multipart/form-data")
+            h3= "Title:"
+            input(type="text" name="title" value=article.title)
+            h3= "Content:"
+            textarea(rows="8" cols="80" name="content")
+                | #{article.content}
+            h3= "Author:"
+            input(type="text" name="author" value=article.author)
+            input(class="add-article-button" type="submit" value="Edit")

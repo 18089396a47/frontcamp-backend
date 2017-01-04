@@ -1,0 +1,23 @@
+extends layout
+title= "App"
+
+block content
+    h1 Articles
+    if authorized == true
+        a(href="/logout") Logout
+        br
+        a(href="/articles/add") Add
+    else
+        a(href="/login") Login
+    ul
+        each i in articles
+            h2= i.title
+            img(src='/uploads/' + i.image)
+            p= i.content
+            h5= i.author
+            p= i.date.toLocaleString()
+            if authorized == true
+                a(href="/articles/edit/" + i.id) Edit
+                br
+                a(href="/articles/delete/" + i.id) Delete
+            hr
