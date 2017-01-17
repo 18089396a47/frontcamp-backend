@@ -12,7 +12,7 @@ function save(req, res) {
         if (err) {
             console.error(err);
         }
-        res.redirect('/');
+        res.send(200);
     });
 }
 

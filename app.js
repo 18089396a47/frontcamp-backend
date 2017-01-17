@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var cors = require('cors');
 
 var index = require('./routes/index');
 var article = require('./routes/article');
@@ -33,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(cors());
 
 app.use('/', index);
 app.use('/articles', article);

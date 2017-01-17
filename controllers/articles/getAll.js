@@ -6,7 +6,7 @@ function getAll(req, res, nex) {
             next(err);
         }
         console.log(articles);
-        res.render('index', { articles: articles, authorized: req.isAuthenticated() });
+        res.json(articles);
     });
 }
 
