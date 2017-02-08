@@ -18,10 +18,10 @@ function update(req, res) {
             if (err) {
                 console.error(err);
             }
-            res.redirect('/');
+            res.send(200);
         });
     } else {
-        req.redirect('/');
+        req.send(500);
     }
 }
 
