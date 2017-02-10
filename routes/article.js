@@ -16,6 +16,6 @@ router.get('/edit/:id', loggedIn, getOne);
 router.get('/delete/:id', loggedIn, deleteOne);
 
 router.post('/add', upload.single('image'), loggedIn, save);
-router.post('/edit/:id', upload.single('image'), loggedIn, update);
+router.put('/edit/:id', upload.single('image'), loggedIn, update);
 
 module.exports = router;
